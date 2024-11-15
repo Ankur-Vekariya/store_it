@@ -61,7 +61,8 @@ function AuthForm({ type }: { type: FormType }) {
       });
       setAccountId(user.accountId);
     } catch (error) {
-      setErrorMessage("Failed to create account, Please try again", error);
+      setErrorMessage("Failed to create account, Please try again");
+      console.log(error);
     } finally {
       setIsLoading(false);
     }
