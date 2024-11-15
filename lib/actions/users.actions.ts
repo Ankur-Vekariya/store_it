@@ -6,7 +6,7 @@ import { appwriteConfig } from "../appwrite/config";
 import { parseStringify } from "../utils";
 import { cookies } from "next/headers";
 
-const getUserByEmail = async (email: String) => {
+const getUserByEmail = async (email: string) => {
   const { databases } = await createAdminClient();
   const result = await databases.listDocuments(
     appwriteConfig.databaseId,
@@ -16,7 +16,7 @@ const getUserByEmail = async (email: String) => {
   return result.total > 0 ? result.documents[0] : null;
 };
 
-export const sendEmailOTP = async ({ email }: { email: String }) => {
+export const sendEmailOTP = async ({ email }: { email: string }) => {
   const { account } = await createAdminClient();
   try {
     const session = await account.createEmailToken(ID.unique(), email);
