@@ -8,7 +8,6 @@ import React from "react";
 
 function Sidebar({
   fullName,
-  avatar,
   email,
 }: {
   fullName: string;

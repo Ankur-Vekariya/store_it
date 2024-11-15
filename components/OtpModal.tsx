@@ -61,7 +61,8 @@ function OtpModal({ email, accountId }: { email: string; accountId: string }) {
             />
           </AlertDialogTitle>
           <AlertDialogDescription className="subtitle-2 text-center">
-            We've sent code to <span className="pl-1 text-brand">{email}</span>
+            We&apos;ve sent code to{" "}
+            <span className="pl-1 text-brand">{email}</span>
           </AlertDialogDescription>
         </AlertDialogHeader>
         <InputOTP maxLength={6} value={password} onChange={setPassword}>
@@ -94,7 +95,7 @@ function OtpModal({ email, accountId }: { email: string; accountId: string }) {
               )}
             </AlertDialogAction>
             <div className="subtitle-2 mt-2 text-center text-light-100">
-              Didn't get code?
+              Didn&apos;t get code?
               <Button
                 type="button"
                 variant="link"
