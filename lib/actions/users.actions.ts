@@ -31,8 +31,8 @@ export const createAccount = async ({
   fullName,
   email,
 }: {
-  fullName: String;
-  email: String;
+  fullName: string;
+  email: string;
 }) => {
   const existingUser = await getUserByEmail(email);
 
