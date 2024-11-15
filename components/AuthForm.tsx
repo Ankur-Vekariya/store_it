@@ -8,7 +8,6 @@ import { Button } from "@/components/ui/button";
 import {
   Form,
   FormControl,
-  FormDescription,
   FormField,
   FormItem,
   FormLabel,
@@ -20,9 +19,6 @@ import Link from "next/link";
 import { createAccount } from "@/lib/actions/users.actions";
 import OtpModal from "./OtpModal";
 
-// const formSchema = z.object({
-//   FullName: z.string().min(2).max(50),
-// });
 
 type FormType = "sign-up" | "sign-in";
 
