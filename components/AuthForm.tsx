@@ -19,7 +19,6 @@ import Link from "next/link";
 import { createAccount } from "@/lib/actions/users.actions";
 import OtpModal from "./OtpModal";
 
-
 type FormType = "sign-up" | "sign-in";
 
 const authFormSchema = (formType: FormType) => {
@@ -62,7 +61,7 @@ function AuthForm({ type }: { type: FormType }) {
       });
       setAccountId(user.accountId);
     } catch (error) {
-      setErrorMessage("Failed to create account, Please try again");
+      setErrorMessage("Failed to create account, Please try again", error);
     } finally {
       setIsLoading(false);
     }
