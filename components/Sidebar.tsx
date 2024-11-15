@@ -6,13 +6,19 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import React from "react";
 
-function Sidebar() {
-  const
-   pathname = usePathname();
+function Sidebar({
+  fullName,
+  avatar,
+  email,
+}: {
+  fullName: string;
+  avatar: string;
+  email: string;
+}) {
+  const pathname = usePathname();
   return (
     <aside className="sidebar">
-      <Li
-      nk href="/">
+      <Link href="/">
         <Image
           src="/assets/icons/logo-full-brand.svg"
           alt="logo"
@@ -29,7 +35,6 @@ function Sidebar() {
         />
       </Link>
       <nav className="sidebar-nav">
-     
         <ul className="flex flex-1 flex-col">
           {navItems.map((items, index) => (
             <Link href={items.url} key={index} className="lg:w-full">
@@ -56,20 +61,24 @@ function Sidebar() {
           ))}
         </ul>
         <Image
-          src="/assets/icons/files-2.svg"
+          src="/assets/images/files-2.png"
           alt="logo"
           width={506}
           height={418}
           className="w-full"
         />
         <div className="sidebar-user-info">
-        <Image
-          src="https://th.bing.com/th/id/OIP.lsaqXiF1qoA0lNGxssv4dQHaFy?rs=1&pid=ImgDetMain"
-          alt="logo"
-          width={506}
-          height={418}
-          className="w-full"
-        />
+          <Image
+            src="https://th.bing.com/th/id/OIP.lsaqXiF1qoA0lNGxssv4dQHaFy?rs=1&pid=ImgDetMain"
+            alt="logo"
+            width={20}
+            height={20}
+            className="w-full"
+          />
+          <div className="hidden lg:block">
+            <p className="subtitle-2 capitalize">{fullName}</p>
+            <p className="caption">{email}</p>
+          </div>
         </div>
       </nav>
     </aside>
@@ -77,4 +86,3 @@ function Sidebar() {
 }
 
 export default Sidebar;
-
