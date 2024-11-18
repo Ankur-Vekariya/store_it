@@ -4,5 +4,6 @@ export const navItems = [
   { name: "Images", icon: "/assets/icons/images.svg", url: "/images" },
   { name: "Media", icon: "/assets/icons/media.svg", url: "/images" },
   { name: "Others", icon: "/assets/icons/others.svg", url: "/others" },
-
 ];
+
+export const MAX_FILE_SIZE = 50 * 1024 * 1024; // 50MB
