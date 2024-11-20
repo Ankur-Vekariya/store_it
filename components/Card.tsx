@@ -4,7 +4,7 @@ import React from "react";
 import Thumbnail from "./Thumbnail";
 import { convertFileSize } from "@/lib/utils";
 import FormattedDateTime from "./FormattedDateTime";
-import ActionDropDown from "./ActionDropDown";
+import ActionDropDown from "./ActionDropdown";
 
 function Card({ file }: { file: Models.Document }) {
   return (
