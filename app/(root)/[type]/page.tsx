@@ -8,8 +8,8 @@ const Page = async ({
   searchParams,
   params,
 }: {
-  searchParams: string;
-  params: string;
+  searchParams: any;
+  params: any;
 }) => {
   const type = ((await params)?.type as string) || "";
 
