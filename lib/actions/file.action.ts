@@ -3,7 +3,7 @@
 import { createAdminClient } from "../appwrite";
 import { InputFile } from "node-appwrite/file";
 import { appwriteConfig } from "../appwrite/config";
-import { Databases, ID, Models, Query } from "node-appwrite";
+import { ID, Models, Query } from "node-appwrite";
 import { constructFileUrl, getFileType, parseStringify } from "../utils";
 import { revalidatePath } from "next/cache";
 import { getCurrentUser } from "./users.actions";

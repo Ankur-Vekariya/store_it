@@ -47,7 +47,13 @@ function Search() {
           className="search-input"
           onChange={(e) => setQuery(e.target.value)}
         />
-        {open && <div className="search-result">Result</div>}
+        {open && (
+          <div className="search-result">
+            {result.map((item, index) => {
+              return <p key={index}>{item.fullName}</p>;
+            })}
+          </div>
+        )}
       </div>
     </div>
   );

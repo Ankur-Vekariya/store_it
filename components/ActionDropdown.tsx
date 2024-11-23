@@ -153,7 +153,7 @@ function ActionDropDown({ file }: { file: Models.Document }) {
             {file.name}
           </DropdownMenuLabel>
           <DropdownMenuSeparator />
-          {actionsDropdownItems.map((item, index) => {
+          {actionsDropdownItems.map((item) => {
             return (
               <DropdownMenuItem
                 key={item.value}

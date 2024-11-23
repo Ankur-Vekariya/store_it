@@ -4,7 +4,13 @@ import { getFiles } from "@/lib/actions/file.action";
 import { getFileTypesParams } from "@/lib/utils";
 import React from "react";
 
-const Page = async ({ searchParams, params }: SearchParamProps) => {
+const Page = async ({
+  searchParams,
+  params,
+}: {
+  searchParams: string;
+  params: string;
+}) => {
   const type = ((await params)?.type as string) || "";
 
   const searchText = ((await searchParams)?.query as string) || "";
