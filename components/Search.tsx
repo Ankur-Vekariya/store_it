@@ -49,9 +49,10 @@ function Search() {
         />
         {open && (
           <div className="search-result">
-            {result.map((item, index) => {
-              return <p key={index}>{item.fullName}</p>;
-            })}
+            {result?.length > 0 &&
+              result?.map((item, index) => {
+                return <p key={index}>{item.fullName}</p>;
+              })}
           </div>
         )}
       </div>

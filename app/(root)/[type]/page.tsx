@@ -16,7 +16,7 @@ const Page = async ({
   const searchText = ((await searchParams)?.query as string) || "";
   const sort = ((await searchParams)?.sort as string) || "";
 
-  const types = getFileTypesParams(type) as FileType[];
+  const types = getFileTypesParams(type);
   const files = await getFiles({ types, searchText, sort });
   return (
     <div className="page-container">
