@@ -3,6 +3,7 @@ import Sort from "@/components/Sort";
 import { getFiles } from "@/lib/actions/file.action";
 import { getFileTypesParams } from "@/lib/utils";
 import React from "react";
+import { SearchParamProps } from "@/types/index";
 
 const Page = async ({ searchParams, params }: SearchParamProps) => {
   const type = ((await params)?.type as string) || "";
