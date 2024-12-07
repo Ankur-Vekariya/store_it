@@ -29,7 +29,11 @@ import { deleteFile, updateFileUsers } from "@/lib/actions/file.action";
 function ActionDropDown({ file }: { file: Models.Document }) {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isDropDownOpen, setIsDropDownOpen] = useState(false);
-  const [action, setAction] = useState(null);
+  const [action, setAction] = useState({
+    label: "",
+    icon: "",
+    value: "",
+  });
   const [name, setName] = useState(file.name);
   const [isLoading, setIsLoading] = useState(false);
   const [emails, setEmails] = useState<string[]>([]);
@@ -39,7 +43,11 @@ function ActionDropDown({ file }: { file: Models.Document }) {
   const closeAllModals = () => {
     setIsModalOpen(false);
     setIsDropDownOpen(false);
-    setAction(null);
+    setAction({
+      label: "",
+      icon: "",
+      value: "",
+    });
     setName(file.name);
     setEmails([]);
   };
@@ -58,13 +66,13 @@ function ActionDropDown({ file }: { file: Models.Document }) {
       //   name: name,
       //   extension: file.extension,
       //   path,
-      // })
+      // }),
       share: () => updateFileUsers({ fileId: file.$id, emails, path }),
       delete: () =>
         deleteFile({ fileId: file.$id, bucketFileId: file.bucketFileid, path }),
     };
 
-    success = await actions[action.value]();
+    success = await actions[action.value as keyof typeof actions]();
 
     if (success) closeAllModals();
     setIsLoading(false);
