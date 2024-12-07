@@ -17,7 +17,7 @@ function FileUploader({
 }: {
   ownerId: string;
   accountId: string;
-  className: string;
+  className?: string;
 }) {
   const { toast } = useToast();
   const [files, setFiles] = useState<File[]>([]);
