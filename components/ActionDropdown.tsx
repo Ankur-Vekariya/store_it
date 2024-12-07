@@ -64,15 +64,15 @@ function ActionDropDown({ file }: { file: Models.Document }) {
         deleteFile({ fileId: file.$id, bucketFileId: file.bucketFileid, path }),
     };
 
-    success = await actions[action.value as keyof typeof actions]();
+    success = await actions[action.value]();
 
     if (success) closeAllModals();
     setIsLoading(false);
   };
 
-  const handleRemoveUser = async (email) => {
+  const handleRemoveUser = async (email: string) => {
     const updatedEmails = emails.filter((e) => e !== email);
-    const success = updateFileUsers({
+    const success = await updateFileUsers({
       fileId: file.$id,
       emails: updatedEmails,
       path,
