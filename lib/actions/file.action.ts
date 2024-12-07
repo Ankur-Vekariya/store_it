@@ -93,11 +93,11 @@ export const getFiles = async ({
   types,
   searchText = "",
   sort = "$createdAt-desc",
-  limit,
+  limit = 10,
 }: {
   types: string[];
-  searchText: string;
-  sort: string;
+  searchText?: string;
+  sort?: string;
   limit?: number;
 }) => {
   const { databases } = await createAdminClient();

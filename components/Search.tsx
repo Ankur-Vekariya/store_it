@@ -16,7 +16,7 @@ function Search() {
 
   useEffect(() => {
     const fetchFiles = async () => {
-      const files = await getFiles({ searchText: query });
+      const files = await getFiles({ searchText: query, types: [] });
       console.log("files=", files);
 
       setResult(files?.documents);
